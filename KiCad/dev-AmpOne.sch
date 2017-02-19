@@ -1,0 +1,282 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:MyKiCadLibs-Lib
+LIBS:dev-AmpOne-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 3
+Title "AmpOne - Class D Amp Module"
+Date "2017-02-14"
+Rev "1.0"
+Comp "Open Hardware DSP Platform - www.ohdsp.org"
+Comment1 "MERCHANTABILITY, SATISFACTORY QUALITY AND FITNESS FOR A PARTICULAR PURPOSE."
+Comment2 "is distributed WITHOUT ANY EXPRESS OR IMPLIED WARRANTY, INCLUDING OF"
+Comment3 "Licensed under the TAPR Open Hardware License (www.tapr.org/OHL). This documentation"
+Comment4 "Copyright Paul Janicki 2017"
+$EndDescr
+Text Notes 700  700  0    118  ~ 0
+Open Hardware DSP Platform - www.ohdsp.org\n
+Text Notes 700  2000 0    79   ~ 0
+Power supply voltage range is 12V to 36V depending on amp IC used. \nPeak current at 36V when pushing max power into 8ohms will approach 20A.\nEnsure input power wiring can handle 20A. \nRecommend 2.5mm2 (13AWG) or larger power cable for mimimum voltage drop.
+Text Notes 700  1500 0    118  ~ 0
+Notes:
+Text Notes 700  1100 0    118  ~ 0
+AmpOne - Class D Amp Module\nRevision 1.0\n
+$Sheet
+S 3100 3100 1950 1200
+U 589E6017
+F0 "InputStage" 60
+F1 "InputStage.sch" 60
+F2 "P1" O R 5050 3250 60 
+F3 "N1" O R 5050 3350 60 
+F4 "P2" O R 5050 3500 60 
+F5 "N2" O R 5050 3600 60 
+F6 "P3" O R 5050 3750 60 
+F7 "N3" O R 5050 3850 60 
+F8 "P4" O R 5050 4000 60 
+F9 "N4" O R 5050 4100 60 
+$EndSheet
+$Sheet
+S 6350 3100 1650 1200
+U 589EC251
+F0 "TDA7498" 60
+F1 "TDA7498.sch" 60
+F2 "P1" I L 6350 3250 60 
+F3 "N1" I L 6350 3350 60 
+F4 "P2" I L 6350 3500 60 
+F5 "N2" I L 6350 3600 60 
+F6 "P4" I L 6350 4000 60 
+F7 "N4" I L 6350 4100 60 
+F8 "P3" I L 6350 3750 60 
+F9 "N3" I L 6350 3850 60 
+$EndSheet
+$Comp
+L C C103
+U 1 1 589CA3C7
+P 2100 6800
+F 0 "C103" H 2100 6900 40  0000 L CNN
+F 1 "100n" H 2110 6715 40  0000 L CNN
+F 2 "MyKiCadLibs-Footprints:SMD-0805" H 2138 6650 30  0001 C CNN
+F 3 "" H 2100 6900 60  0000 C CNN
+F 4 "50V" H 2165 6650 40  0000 C CNN "Voltage"
+F 5 "X7R" H 2170 6575 40  0000 C CNN "Type"
+F 6 "Ceramic capacitor" H 2100 7100 40  0001 L CNN "Description"
+F 7 "10%" H 2500 7300 40  0001 C CNN "Tolerance"
+F 8 "0805" H 2100 6800 60  0001 C CNN "Size"
+	1    2100 6800
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C102
+U 1 1 589CA3D3
+P 1850 6800
+F 0 "C102" H 1850 6900 40  0000 L CNN
+F 1 "4u7" H 1860 6715 40  0000 L CNN
+F 2 "MyKiCadLibs-Footprints:SMD-0805" H 1888 6650 30  0001 C CNN
+F 3 "" H 1850 6900 60  0000 C CNN
+F 4 "50V" H 1915 6650 40  0000 C CNN "Voltage"
+F 5 "X5R" H 1920 6575 40  0000 C CNN "Type"
+F 6 "Ceramic capacitor" H 1850 7100 40  0001 L CNN "Description"
+F 7 "10%" H 2250 7300 40  0001 C CNN "Tolerance"
+F 8 "0805" H 1850 6800 60  0001 C CNN "Size"
+	1    1850 6800
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_2x1 P104
+U 1 1 589CA3DB
+P 1300 6400
+F 0 "P104" V 1795 6245 40  0000 C CNN
+F 1 "CONN_2x1" V 1740 6360 40  0000 C CNN
+F 2 "MyKiCadLibs-Footprints:CONN-SCREW-2WAY-7.5mm-7.62mm" H 1640 6290 60  0001 C CNN
+F 3 "" H 1640 6290 60  0000 C CNN
+F 4 "Text description" H 1550 6150 40  0001 C CNN "Description"
+	1    1300 6400
+	-1   0    0    -1  
+$EndComp
+$Comp
+L GNDD #PWR01
+U 1 1 589CA3E2
+P 1350 7200
+F 0 "#PWR01" H 1350 6950 60  0001 C CNN
+F 1 "GNDD" H 1350 7050 60  0000 C CNN
+F 2 "" H 1350 7200 60  0000 C CNN
+F 3 "" H 1350 7200 60  0000 C CNN
+	1    1350 7200
+	1    0    0    -1  
+$EndComp
+$Comp
+L VCC #PWR02
+U 1 1 589CA3E8
+P 2100 6300
+F 0 "#PWR02" H 2100 6150 50  0001 C CNN
+F 1 "VCC" H 2100 6450 50  0000 C CNN
+F 2 "" H 2100 6300 50  0000 C CNN
+F 3 "" H 2100 6300 50  0000 C CNN
+	1    2100 6300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1350 6500 1350 7200
+Wire Wire Line
+	1350 6500 1300 6500
+Wire Wire Line
+	1300 6400 2100 6400
+Wire Wire Line
+	1850 6400 1850 6600
+Wire Wire Line
+	2100 6300 2100 6600
+Connection ~ 1850 6400
+Wire Wire Line
+	1350 7100 2100 7100
+Connection ~ 1350 7100
+Wire Wire Line
+	1850 7100 1850 7000
+Wire Wire Line
+	2100 7100 2100 7000
+Connection ~ 1850 7100
+Connection ~ 2100 6400
+$Comp
+L MNT_HOLE MNT101
+U 1 1 589CF417
+P 9000 5700
+F 0 "MNT101" H 9000 5800 60  0000 C CNN
+F 1 "MNT_HOLE" H 9000 5800 60  0001 C CNN
+F 2 "MyKiCadLibs-Footprints:MNT_HOLE_3mm" H 9000 5800 60  0001 C CNN
+F 3 "" H 9000 5800 60  0000 C CNN
+	1    9000 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L MNT_HOLE MNT102
+U 1 1 589CF584
+P 9350 5700
+F 0 "MNT102" H 9350 5800 60  0000 C CNN
+F 1 "MNT_HOLE" H 9350 5800 60  0001 C CNN
+F 2 "MyKiCadLibs-Footprints:MNT_HOLE_3mm" H 9350 5800 60  0001 C CNN
+F 3 "" H 9350 5800 60  0000 C CNN
+	1    9350 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L MNT_HOLE MNT103
+U 1 1 589CF5CF
+P 9000 5950
+F 0 "MNT103" H 9000 6050 60  0000 C CNN
+F 1 "MNT_HOLE" H 9000 6050 60  0001 C CNN
+F 2 "MyKiCadLibs-Footprints:MNT_HOLE_3mm" H 9000 6050 60  0001 C CNN
+F 3 "" H 9000 6050 60  0000 C CNN
+	1    9000 5950
+	1    0    0    -1  
+$EndComp
+$Comp
+L MNT_HOLE MNT104
+U 1 1 589CF61F
+P 9350 5950
+F 0 "MNT104" H 9350 6050 60  0000 C CNN
+F 1 "MNT_HOLE" H 9350 6050 60  0001 C CNN
+F 2 "MyKiCadLibs-Footprints:MNT_HOLE_3mm" H 9350 6050 60  0001 C CNN
+F 3 "" H 9350 6050 60  0000 C CNN
+	1    9350 5950
+	1    0    0    -1  
+$EndComp
+$Comp
+L PIN P101
+U 1 1 589CF67F
+P 9950 5550
+F 0 "P101" H 10210 5580 40  0000 L CNN
+F 1 "PIN" H 10210 5515 40  0000 L CNN
+F 2 "MyKiCadLibs-Footprints:MNT_HOLE_3mm_PTH" H 10290 5440 60  0001 C CNN
+F 3 "" H 10290 5440 60  0000 C CNN
+F 4 "Text description" H 10215 5455 40  0001 L CNN "Description"
+	1    9950 5550
+	1    0    0    -1  
+$EndComp
+$Comp
+L GNDD #PWR03
+U 1 1 589CF9F9
+P 9800 6100
+F 0 "#PWR03" H 9800 5850 60  0001 C CNN
+F 1 "GNDD" H 9800 5950 60  0000 C CNN
+F 2 "" H 9800 6100 60  0000 C CNN
+F 3 "" H 9800 6100 60  0000 C CNN
+	1    9800 6100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9950 6000 9800 6000
+Wire Wire Line
+	9800 5550 9800 6100
+Connection ~ 9800 6000
+Wire Wire Line
+	9950 5700 9800 5700
+Wire Wire Line
+	9950 5550 9800 5550
+Connection ~ 9800 5700
+$Comp
+L PIN P102
+U 1 1 589CFF5F
+P 9950 5700
+F 0 "P102" H 10210 5730 40  0000 L CNN
+F 1 "PIN" H 10210 5665 40  0000 L CNN
+F 2 "MyKiCadLibs-Footprints:MNT_HOLE_3mm_PTH" H 10290 5590 60  0001 C CNN
+F 3 "" H 10290 5590 60  0000 C CNN
+F 4 "Text description" H 10215 5605 40  0001 L CNN "Description"
+	1    9950 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L PIN P103
+U 1 1 589CFFFC
+P 9950 6000
+F 0 "P103" H 10210 6030 40  0000 L CNN
+F 1 "PIN" H 10210 5965 40  0000 L CNN
+F 2 "MyKiCadLibs-Footprints:MNT_HOLE_3mm_PTH" H 10290 5890 60  0001 C CNN
+F 3 "" H 10290 5890 60  0000 C CNN
+F 4 "Text description" H 10215 5905 40  0001 L CNN "Description"
+	1    9950 6000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5050 3250 6350 3250
+Wire Wire Line
+	6350 3350 5050 3350
+Wire Wire Line
+	5050 3500 6350 3500
+Wire Wire Line
+	6350 3600 5050 3600
+Wire Wire Line
+	5050 3750 6350 3750
+Wire Wire Line
+	6350 3850 5050 3850
+Wire Wire Line
+	5050 4000 6350 4000
+Wire Wire Line
+	6350 4100 5050 4100
+Text Notes 900  6050 0    79   ~ 0
+Power supply input
+$Comp
+L CP1 C101
+U 1 1 58A1C727
+P 1550 6800
+F 0 "C101" H 1725 6900 40  0000 R CNN
+F 1 "560u" H 1720 6690 40  0000 R CNN
+F 2 "MyKiCadLibs-Footprints:CAP-TH-D12.5mmP5mm" H 1500 6800 60  0001 C CNN
+F 3 "" H 1550 6800 60  0000 C CNN
+F 4 "63V" H 1680 6630 40  0000 R CNN "Voltage"
+F 5 "Pitch 5mm, Diameter 12.5mm" H 1550 7100 40  0001 L CNN "Size"
+F 6 "560uF 63V High ripple current long life, eg Panasonic FR EEUFR1J561L" H 1550 7200 40  0001 L CNN "Description"
+	1    1550 6800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1550 6600 1550 6400
+Connection ~ 1550 6400
+Wire Wire Line
+	1550 7000 1550 7100
+Connection ~ 1550 7100
+Text Notes 8750 5350 0    118  ~ 0
+Notes:
+$EndSCHEMATC
